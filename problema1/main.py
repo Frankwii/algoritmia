@@ -100,7 +100,7 @@ def buscar_camino(tablero, N, M, K, K2):  # K2=K**2; se pasa por parametro para 
     return False
 
 
-sys.stdin = open("entrada.txt", "r")
+sys.stdin = open("recursos/entradas/parametros_coordenadas.txt", "r")
 
 entrada = sys.stdin.readline().split(" ")
 
