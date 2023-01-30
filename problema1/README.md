@@ -34,15 +34,23 @@ se pueda llegar desde el (0, 0) y no se hayan mirado ya; por tanto, no puede lle
 devuelve *False*. Cuando se ha determinado si había o no un camino, se restablecen los valores
 2 a 1. 
 
-Este método tiene un coste computacional de O(n), donde n es el número de casillas transitables.
-
 El método *busqueda_ultima_transitable* busca, en la lista de las casillas transitables (distintas
 de (0, 0) y (N, M)), el índice en esa lista de la casilla transitable que hizo que dejara de haber
 camino al ser eliminada. Esta búsqueda se hace de manera dicotómica: se centra en el punto
 medio de los extremos y elimina del tablero todas las casillas transitables anteriores al centro.
 Después, llama a *buscar_camino*, y descarta la mitad de la lista correspondiente, según si había
-o no camino. El número de veces que nos centramos en una casilla es de orden O(log(n)), y comprobar si había camino tiene un coste de O(n). Por tanto, esta funcion tiene un coste de O(nlog(n)).
+o no camino.
 
 Para el programa principal, inicializamos el tablero con las casillas correspondientes, primero todas vacías. A continuación, colocamos casillas transitables donde corresponde. Seguidamente, miramos si hay camino;
 si no lo hay, el programa devuelve NUNCA SE PUDO, mientras que si existe el camino, llama a
-*busqueda_ultima_transitable*, y devuelve las coordenadas de la casilla correspondiente. Por tanto, el programa tiene un coste de O(nlog(n)).
+*busqueda_ultima_transitable*, y devuelve las coordenadas de la casilla correspondiente. Por tanto, el programa tiene
+el mismo coste que *busqueda_ultima_transitable*.
+
+**Coste computacional**
+
+El método *buscar_camino* tiene un coste computacional de O(n), donde n es el número de casillas transitables,
+pues como mucho se centra una vez en cada casilla transitable.
+
+En el método *busqueda_ultima_transitable*, el número de veces que nos centramos en
+una casilla es de orden O(log(n)), y comprobar si había camino tiene un coste de O(n).
+Por tanto, esta función (y por ende el programa principal) tiene un coste de O(nlog(n)).
