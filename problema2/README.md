@@ -23,7 +23,7 @@ pierde.
 
 Se recibe un fichero con casos de prueba en los que se indica el valor visible en la
 calculadora al recibir el turno, la última jugada del adversario y la posición de los
-números.
+números. Como salida, se debe imprimir en cada caso si el segundo jugador gana o pierde.
 
 **Resolución**
 
