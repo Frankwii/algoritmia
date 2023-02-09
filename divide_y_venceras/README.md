@@ -1,4 +1,4 @@
-**Problema 1**
+**Problema**
 
 Se tiene un tablero de (N+1)x(M+1) casillas en el que solo 
 determinadas casillas (conocidas) son transitables. Se empieza en el punto
