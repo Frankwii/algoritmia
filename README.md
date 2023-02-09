@@ -1,11 +1,11 @@
-Compilación de programas realizados en la asignatura de Algortmia en la UIB. Cada problema está pensado para ser resuelto con un determinado paradigma de programación:
+Compilación de programas realizados en la asignatura de Algortmia en la UIB. Se utilizan algoritmos como la búsqueda dicotómica o el backtracking. Cada problema está pensado para ser resuelto con un determinado paradigma de programación:
 
-Problema 1: Divide y vencerás
+Divide y vencerás: Determinar cuándo hay caminos en un tablero con cada vez menos casillas transitables.
 
-Problema 2: Búsqueda en grafos
+Búsqueda en grafos: Determinar qué jugador gana en una versión del juego del 31.
 
-Problema 3: Algoritmos voraces
+Algoritmos voraces: Apilar objetos en el menor número de torres posibles.
 
-Problema 4: Programación dinámica
+Programación dinámica: Contar el número de caminos en un tablero.
 
 Adicionalmente, se  incluye un miniproyecto en el que se utiliza la programación orientada a objetos de manera básica.
