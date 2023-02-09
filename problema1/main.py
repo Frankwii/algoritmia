@@ -2,7 +2,7 @@ import sys
 import time
 
 
-def busqueda_ultima_casilla(tablero, N, M, K, n, ltransitables):
+def busqueda_ultima_transitable(tablero, N, M, K, n, ltransitables):
     """Suponemos que hay algun camino con el tablero lleno. El metodo hace una busqueda
     dicotomica sobre la lista de casillas transitables para averiguar cual es la ultima
     que se puede quitar.
@@ -21,10 +21,10 @@ def busqueda_ultima_casilla(tablero, N, M, K, n, ltransitables):
         x, y = ltransitables[i]
         tablero[x][y] = 0
 
-    return int_busqueda_ultima_casilla(tablero, N, M, K, ltransitables, 0, n - 1, mid)
+    return int_busqueda_ultima_transitable(tablero, N, M, K, ltransitables, 0, n - 1, mid)
 
 
-def int_busqueda_ultima_casilla(tablero, N, M, K, ltransitables, ini, fin, mid):
+def int_busqueda_ultima_transitable(tablero, N, M, K, ltransitables, ini, fin, mid):
     """Subrutina auxiliar para llevar a cabo la busqueda dicotomica."""
     if ini == fin - 1:
         return fin
@@ -36,7 +36,7 @@ def int_busqueda_ultima_casilla(tablero, N, M, K, ltransitables, ini, fin, mid):
         for i in range(ini + 1, mid + 1):  # Fuera de [ini+1:mid+1] ya esta preparado para la proxima iteracion
             x, y = ltransitables[i]  # Quitamos las casillas transitables antes de mid (incluido)
             tablero[x][y] = 0
-        return int_busqueda_ultima_casilla(tablero, N, M, K, ltransitables, ini, fin, mid)
+        return int_busqueda_ultima_transitable(tablero, N, M, K, ltransitables, ini, fin, mid)
     else:  # La ultima esta a la izquierda
         fin = mid
         mid = (ini + fin) // 2
@@ -45,7 +45,7 @@ def int_busqueda_ultima_casilla(tablero, N, M, K, ltransitables, ini, fin, mid):
             x, y = ltransitables[i]  # Volvemos a colocar las casillas transitables despues de mid (no incluido)
             tablero[x][y] = 1
 
-        return int_busqueda_ultima_casilla(tablero, N, M, K, ltransitables, ini, fin, mid)
+        return int_busqueda_ultima_transitable(tablero, N, M, K, ltransitables, ini, fin, mid)
 
 
 def buscar_camino(tablero, N, M, K, K2):  # K2=K**2; se pasa por parametro para no tener que calcularlo cada vez
@@ -144,7 +144,7 @@ while len(entrada) == 4:
         print("NUNCA SE PUDO")
 
     else:
-        x, y = ltransitables[busqueda_ultima_casilla(tablero, N, M, K, n, ltransitables)]
+        x, y = ltransitables[busqueda_ultima_transitable(tablero, N, M, K, n, ltransitables)]
         print(x, y)
 
     entrada = sys.stdin.readline().split(" ")
