@@ -1,4 +1,4 @@
-**Problema 3**
+**Problema**
 
 Una foca va a un restaurante de cangrejos con buffet libre. 
 Los cangrejos le van llegando en una cinta en un orden que no puede elegir ni conoce, y
