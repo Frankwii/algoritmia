@@ -1,0 +1,42 @@
+from clases import *
+
+elec1 = CocheElectrico("blanco", 250, "Tesla", "3", "JWN0912", 45, TipoEnchufe.A)
+elec2 = CocheElectrico("negro", 100, "Tesla", "Y", "QIW2391", 45, TipoEnchufe.B)
+dies1 = CocheDiesel("rojo", 200, "Nissan", "Cascade", "SDX3289")
+gaso1 = CocheGasolina("azul", 100, "Ford", "Fiesta", "QKW2370")
+gaso2 = CocheGasolina("morado", 130, "Volkswagen", "Escarabajo", "IWU3829")
+hibr1 = CocheHibrido("blanco", 210, "Toyota", "Corolla", "SKT3981", 10)
+hibr2 = CocheHibrido("gris", 85, "FIAT", "500", "PEJ3283", 15)
+hibr3 = CocheHibrido("amarillo", 250, "Ferrari", "Purosangue", "FRV8329", 40)
+
+planta11 = Planta([None] * 20)
+planta12 = Planta([None] * 30)
+
+planta21 = Planta([None] * 10)
+planta22 = Planta([None] * 40)
+planta23 = Planta([None] * 20)
+
+aparcamiento1 = Aparcamiento([planta11, planta12])
+aparcamiento2 = Aparcamiento([planta21, planta22, planta23])
+
+aparcamiento1.aparcarcoche(0, 2, elec1)
+aparcamiento1.aparcarcoche(1, 5, elec2)
+aparcamiento1.aparcarcoche(0, 0, dies1)
+aparcamiento1.aparcarcoche(1, 9, gaso1)
+aparcamiento1.aparcarcoche(1, 15, gaso2)
+aparcamiento1.aparcarcoche(0, 3, hibr1)
+
+print("El número total de plazas es: ", Aparcamiento.plazastotales())
+print("El número de plazas libres por aparcamiento es: ", Aparcamiento.plazaslibresporaparcamiento())
+print("El total de plazas libres es: ", Aparcamiento.plazaslibrestotales())
+print("La potencia total de los coches en circulación es: ", Coche.potenciatotalencirculacion())
+var = Coche.conteotiposdecoche()
+print("Hay ", var[0], " coches de gasolina")
+print(var[1], " de diesel")
+print(var[2], " híbridos")
+print(var[3], " electricos")
+print("Los coches con más potencia tienen matrículas", Coche.cochesmaspotente())
+print("La media de las potencias de los coches aparcados es ", Coche.mediaaparcados())
+print("La media de las potencias de los coches en circulacion es ", Coche.mediacirculacion())
+print("La varianza de las potencias de los coches aparcados es ", Coche.varianzaaparcados())
+print("La varianza de las potencias de los coches en circulacion es ", Coche.varianzacirculacion())
