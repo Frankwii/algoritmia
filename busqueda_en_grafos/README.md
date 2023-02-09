@@ -1,4 +1,4 @@
-**Problema 2**
+**Problema**
 
 Dos jugadores juegan al 31 con algunas reglas adicionales:
 
