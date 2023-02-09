@@ -59,8 +59,8 @@ def busqueda_mayor(lista, valor, ini, fin):
 sys.stdin = open("recursos/entradas/entrada_modulo_3.txt", "r")
 
 entrada = sys.stdin.readline().split("\n")
-sortida = "salida_programa.txt"
-sys.stdout = open(sortida, "w")
+salida = "salida_programa.txt"
+sys.stdout = open(salida, "w")
 
 while entrada[0] != '':
     num = entrada[0]
