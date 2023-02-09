@@ -1,4 +1,4 @@
-**Problema 4**
+**Problema**
 
 Se tiene un tablero de tamaño (N+1)x(N+1) en el que determinadas casillas conocidas
 no son transitables. Se quiere ir desde la casilla (0,0) hasta la (N,N) moviéndose
